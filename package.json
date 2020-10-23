@@ -8,8 +8,10 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "9.5.3",
+    "bootstrap": "^4.5.3",
+    "next": "^9.5.5",
     "react": "16.13.1",
+    "react-bootstrap": "^0.32.4",
     "react-dom": "16.13.1"
   }
 }
