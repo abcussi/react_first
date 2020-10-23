@@ -21,10 +21,10 @@ export default function Login() {
     }
   
     return (
-      <div className="Login">
+      <div className="Login" style={{marginTop: 100}}>
         <form onSubmit={handleSubmit}>
           <FormGroup controlId="email" bsSize="large">
-            <ControlLabel>Email</ControlLabel>
+            <ControlLabel style={{padding: 5, textAlign: "center"}}>email: </ControlLabel>
             <FormControl
               autoFocus
               type="email"
@@ -33,7 +33,7 @@ export default function Login() {
             />
           </FormGroup>
           <FormGroup controlId="password" bsSize="large">
-            <ControlLabel>Password</ControlLabel>
+            <ControlLabel style={{padding: 5, textAlign: "center"}}>pass: </ControlLabel>
             <FormControl
               value={password}
               onChange={e => setPassword(e.target.value)}
@@ -41,13 +41,21 @@ export default function Login() {
             />
           </FormGroup>
           <Button block bsSize="large" disabled={!validateForm()} type="submit">
-            Login
+            Iniciar sesion
           </Button>
-
           <div>
     <style jsx global>{`
         body {
-        background: #FFFDD0
+        background: #FFFDD0;
+        }
+
+        div {
+          display:flex;
+          flex-direction: row;
+          justify-content:center;
+          width: 800;
+          heigth: 600;
+          
         }
         `}</style>
   </div>
