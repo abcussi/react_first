@@ -2,7 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/Home": "pages/Home.js",
   "/": "pages/index.js",
-  "/register": "pages/register.js"
+  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
+  "/login": "pages/login.js",
+  "/termsConditions": "pages/termsConditions.js"
 }
