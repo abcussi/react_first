@@ -1,11 +1,9 @@
 import Link from 'next/link';
 import { Button, Layout } from 'antd';
-
 export default function Home() {
   const { Header, Footer, Content } = Layout;
 
   return (
-    <>
       <Layout>
        
         <Content style={
@@ -29,6 +27,5 @@ export default function Home() {
         </Content>
         
       </Layout>
-    </>
   )
 }

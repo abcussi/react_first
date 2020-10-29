@@ -18,15 +18,15 @@ export function Login() {
       const response = await fetch('https://dbcolegios.blockchainconsultora.com/users/login', { method: 'post', body: JSON.stringify(value), headers: { Accept: 'application/json', 'Content-Type': 'application/json' } });
       const data = await response.json();
       alert(`this is you Token: ${data.token}`)
-      message.success('Correct datas...')
       formule.resetFields();
+     document.location.href= '/Home'
     } catch (err) {
       console.log(err)
     }
   }
 
   useEffect(() => {
-    message.success('the page was loaded')
+    message.success('pagina cargada')
   }, []);
 
   return (
@@ -65,12 +65,11 @@ export function Login() {
                 type="primary"
                 htmlType="submit"
                 block
-              >Login</Button>
+              >Ingresar</Button>
             </Form.Item>
           </Form>
         </div>
-        <p className="login__motto">Let's make the work more productive, together.</p>
-      </div>
+        </div>
 
       <style jsx>{`
         .login {

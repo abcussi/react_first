@@ -8,7 +8,6 @@ export const Wrapper = ({ children, inLogin }) => {
   const { Header, Footer, Content } = Layout;
 
   return (
-    <>
       <Layout>
         <Header style={{ display: "flex", background: '#f0f2f5' }}>
           
@@ -28,8 +27,9 @@ export const Wrapper = ({ children, inLogin }) => {
         <Content>
           {children}
         </Content>
-        
+        <Footer>
+          THIS IS THE FOOTER
+        </Footer>
       </Layout>
-    </>
   )
 }
