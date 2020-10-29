@@ -23,6 +23,9 @@ export default function Home() {
             <Link as='/register' href="/register">
               <Button style={{ marginLeft: 20 }} type="primary">registrarse</Button>
             </Link>
+            <Link as='/TermsConditions' href="/TermsConditions">
+              <Button type="primary">terminos y condiciones</Button>
+            </Link>
           </div>
         </Content>
         
