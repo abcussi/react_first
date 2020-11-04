@@ -6,8 +6,16 @@ import Link from 'next/link'
 import { MailOutlined, LockOutlined } from '@ant-design/icons';
 import { Form, Input, Button, message } from 'antd';
 
+import { useSelector, useDispatch } from 'react-redux';
+
+import {
+  USER_SINGIN_SUCCESS
+} from '../../constants/ActionTypes'
+
 export function Login() {
   const [form, setForm] = useState({ email: '', password: '' })
+  const dispach = useDispatch();
+  const auth = useSelector(store => store.auth);
 
   const [formule] = Form.useForm();
 
@@ -18,15 +26,25 @@ export function Login() {
       const response = await fetch('https://dbcolegios.blockchainconsultora.com/users/login', { method: 'post', body: JSON.stringify(value), headers: { Accept: 'application/json', 'Content-Type': 'application/json' } });
       const data = await response.json();
       alert(`this is you Token: ${data.token}`)
+
+      dispach({
+        type: USER_SINGIN_SUCCESS,
+        payload: {
+          tokenUser: data.token,
+          dataUser: value
+        }
+      })
+
+      message.success('OK')
       formule.resetFields();
-     document.location.href= '/Home'
+
     } catch (err) {
       console.log(err)
     }
   }
 
   useEffect(() => {
-    message.success('pagina cargada')
+    message.success('OK')
   }, []);
 
   return (
@@ -61,66 +79,23 @@ export function Login() {
             </Form.Item>
             <Form.Item>
               <Button
-                style={{ height: 40 }}
+                style={{ height: 40, marginBottom: 10 }}
                 type="primary"
                 htmlType="submit"
                 block
-              >Ingresar</Button>
+              >Login</Button>
+              <Button
+                type="primary"
+                onClick={() => {
+                  console.log(auth);
+                }}
+              >Show is console the store</Button>
             </Form.Item>
           </Form>
         </div>
-        </div>
+        <p className="login__motto">Let's make the work more productive, together.</p>
+      </div>
 
-      <style jsx>{`
-        .login {
-          background-position: bottom;
-          background-size: cover;
-          height: calc(100vh - 137px);
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        .login__card {
-          width: 460px;
-          height: 380px;
-          background:#fff;
-          border-radius: 8px;
-          box-shadow: 0 0 100px -52px rgba(0,0,0, 0.75);
-          padding: 0 35px;
-        }
-        .login__title {
-          text-align: center;
-          color: #333;
-          margin-top: 45px;
-          font-weight: 700;
-        }
-        .login__input a {
-          position: absolute;
-          font-size: 13px;
-          text-decoration: none;
-          right: 8px;
-          bottom: 10px;
-          color: #5f48ea;
-          font-style: oblique;
-        }
-        .login__motto {
-          color: #fff;
-          letter-spacing: 2px;
-          font-size: 11px;
-          mergin-top: 25px;
-          font-weight: 600;
-          margin-top: 25px;
-          text-transform: uppercase;
-        }
-
-        @media (max-width: 500px) {
-          .login__card {
-            width: 400px;
-          }
-        }
-      `}</style>
     </Wrapper >
   )
 }

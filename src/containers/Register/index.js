@@ -28,7 +28,7 @@ export function Register() {
 
   const handleSubmit = (value) => {
     console.log(value);
-    alert('se presiono el boton y se pasaron los datos');
+    alert('datos ok');
 
 
     setState(value);
@@ -88,46 +88,6 @@ export function Register() {
         </div>
       </div>
 
-      <style jsx>{`
-        .register {
-          background-position: bottom;
-          background-size: cover;
-          height: calc(100vh - 137px);
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        .register__card {
-          width: 460px;
-          background:#fff;
-          border-radius: 8px;
-          box-shadow: 0 0 100px -52px rgba(0,0,0, 0.75);
-          padding: 0 35px;
-        }
-        .register__title {
-          text-align: center;
-          color: #333;
-          margin-top: 45px;
-          font-weight: 700;
-        }
-        .register__input .login__showPassword {
-          position: absolute;
-          font-size: 13px;
-          cursor: pointer;
-          text-decoration: none;
-          right: 8px;
-          bottom: 10px;
-          color: #5f48ea;
-          font-style: oblique;
-        }
-        @media (max-width: 500px) {
-          .login__card {
-            width: 400px;
-          }
-        }
-      `}</style>
     </Wrapper>
   )
 }

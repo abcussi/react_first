@@ -12,7 +12,7 @@ export function RememberPassword() {
 
   const handleSubmit = (value) => {
     console.log(value)
-    message.success('datos correctos');
+    message.success('datos ok');
     formule.resetFields();
   }
 
